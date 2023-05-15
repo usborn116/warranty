@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Warranty cards</h1>
+
+<div id="warranty_cards">
+  <% @warranty_cards.each do |warranty_card| %>
+    <%= render warranty_card %>
+    <p>
+      <%= link_to "Show this warranty card", warranty_card %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New warranty card", new_warranty_card_path %>

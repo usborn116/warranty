@@ -1,0 +1,17 @@
+<%= form_with(model: warranty_card) do |form| %>
+  <% if warranty_card.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(warranty_card.errors.count, "error") %> prohibited this warranty_card from being saved:</h2>
+
+      <ul>
+        <% warranty_card.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

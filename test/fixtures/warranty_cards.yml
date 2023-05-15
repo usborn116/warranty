@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item: one
+  code: MyString
+  contact: MyString
+  expiration: 2023-05-15
+  lifetime: false
+  notes: MyText
+
+two:
+  item: two
+  code: MyString
+  contact: MyString
+  expiration: 2023-05-15
+  lifetime: false
+  notes: MyText

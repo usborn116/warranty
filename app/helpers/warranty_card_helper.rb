@@ -1,0 +1,2 @@
+module WarrantyCardHelper
+end
