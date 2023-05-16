@@ -13,7 +13,9 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    @item = Item.new
+    @item = Item.new(user_id: current_user.id)
+    @room_item = @item.room_items.build.build_room
+    @item.warranty_cards.build
   end
 
   # GET /items/1/edit
@@ -66,6 +68,8 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.fetch(:item, {})
+      params.require(:item).permit(:user_id, :name, :brand, :year, :serial,
+        room_items_attributes: [room_attributes: [:name, :user_id]],
+        warranty_cards_attributes: [:id, :code, :contact, :expiration, :lifetime, :notes])
     end
 end

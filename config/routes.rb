@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  resources :warranty_cards
-  resources :items
+  get 'room_items/new'
+  get 'room_items/create'
+  get 'room_items/edit'
+  get 'room_items/update'
+  get 'room_items/destory'
+  resources :items do
+    get 'warranties', on: :member
+  end
   resources :rooms
   devise_for :users
   root to: "items#index"

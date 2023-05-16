@@ -13,7 +13,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/new
   def new
-    @room = Room.new
+    @room = Room.new(user_id: current_user.id)
   end
 
   # GET /rooms/1/edit

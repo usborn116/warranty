@@ -1,2 +1,17 @@
 <div id="<%= dom_id item %>">
+Item: <%= item.name %><br>
+Brand: <%= item.brand %><br>
+Year Purchased: <%= item.year.strftime('%Y') %><br>
+Serial Number: <%= item.serial %><br>
+Rooms: <%= item.rooms.first.name %><br>
+
+
+<summary>
+Warranty details
+<details>
+<%= render item.warranty_cards %>
+
+</details>
+</summary>
+
 </div>

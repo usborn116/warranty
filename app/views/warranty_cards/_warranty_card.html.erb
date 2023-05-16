@@ -1,2 +1,6 @@
 <div id="<%= dom_id warranty_card %>">
+Support Contact: <%= warranty_card.contact %><br>
+Expiration Date: <%= warranty_card.expiration.strftime('%b %m, %Y') if warranty_card.expiration %><br>
+Lifetime Warranty? <%= warranty_card.lifetime %><br>
+Notes: <%= warranty_card.notes %><br>
 </div>
