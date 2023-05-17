@@ -9,3 +9,5 @@ https://medium.com/inview-technical-blog/rails-5-using-find-or-create-by-for-nes
 https://www.theodinproject.com/lessons/ruby-on-rails-advanced-forms
 
 https://www.createdbypete.com/2014/04/04/working-with-nested-forms-and-a-many-to-many-association-in-rails-4.html
+
+https://stackoverflow.com/questions/61915393/actionviewtemplateerror-cant-resolve-image-into-url-undefined-method

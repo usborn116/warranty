@@ -32,11 +32,18 @@
     <%= f.text_field :serial, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :photo %><br />
+    <%= f.file_field :photo, direct_upload: true %>
+  </div>
+
   <h3>Room Name</h3>
   <%= f.fields_for :room_items do | sub_form |%>
     <%= sub_form.fields_for :room do |room_form| %>
-      <%= room_form.label :name %>
-      <%= room_form.text_field :name %>      
+      <%= room_form.label :name, "Select a Room" %><br>
+      <%= room_form.collection_check_boxes :id, Room.order(:name), :id, :name %> <br>
+      <%= room_form.label :name, "Or create your own" %><br>
+      <%= room_form.text_field :name %> 
       <%= room_form.hidden_field :user_id, :value => current_user.id %>
     <% end %>
   <% end %>

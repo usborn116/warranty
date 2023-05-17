@@ -13,26 +13,27 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    @item = Item.new(user_id: current_user.id)
-    @room_item = @item.room_items.build.build_room
+    @item = Item.new
+    @item.room_items.build.build_room
     @item.warranty_cards.build
   end
 
   # GET /items/1/edit
   def edit
+    @item.room_items.build
   end
 
   # POST /items or /items.json
   def create
-    @item = Item.new(item_params)
+    @item = current_user.items.new(item_params)
 
     respond_to do |format|
       if @item.save
         format.html { redirect_to item_url(@item), notice: "Item was successfully created." }
-        format.json { render :show, status: :created, location: @item }
+        #format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+        #format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,10 +43,10 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to item_url(@item), notice: "Item was successfully updated." }
-        format.json { render :show, status: :ok, location: @item }
+        #format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+        #format.json { render json: @item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -68,7 +69,7 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:user_id, :name, :brand, :year, :serial,
+      params.require(:item).permit(:user_id, :name, :brand, :year, :serial, :photo,
         room_items_attributes: [room_attributes: [:name, :user_id]],
         warranty_cards_attributes: [:id, :code, :contact, :expiration, :lifetime, :notes])
     end

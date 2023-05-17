@@ -3,7 +3,7 @@ class RoomItem < ApplicationRecord
   belongs_to :item
   accepts_nested_attributes_for :room
   
-  before_save :find_or_create_room
+  before_create :find_or_create_room
 
   private
 

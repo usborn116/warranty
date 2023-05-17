@@ -3,6 +3,7 @@ class RoomItemsController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    @rooms = Room.all.map{|r| [r.name, r.id]}
   end
 
   def create
@@ -25,9 +26,7 @@ class RoomItemsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def item_params
-    params.require(:item).permit(:user_id, :name, :brand, :year, :serial,
-      room_items_attributes: [rooms_attributes: [:name]],
-      warranty_card_attributes: [:id, :code, :contact, :expiration, :lifetime, :notes])
+    params.require(:room_item).permit([room_attributes: [:id, :name]])
   end
 
 end
