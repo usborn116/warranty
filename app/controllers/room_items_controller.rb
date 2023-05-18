@@ -26,7 +26,7 @@ class RoomItemsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def item_params
-    params.require(:room_item).permit([room_attributes: [:id, :name]])
+    params.require(:room_item).permit(:room_id)
   end
 
 end

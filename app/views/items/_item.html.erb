@@ -4,7 +4,7 @@ Brand: <%= item.brand %><br>
 Year Purchased: <%= item.year.strftime('%Y') %><br>
 Serial Number: <%= item.serial %><br>
 Rooms: <%= item&.rooms.first&.name %><br>
-<% if item.photo %><%= image_tag url_for(item.photo), :style=>"width:200px;height:auto" %><%end%>
+<% if item.photo.attached? %><%= image_tag url_for(item.photo), :style=>"width:200px;height:auto" %><%end%>
 
 
 <summary>

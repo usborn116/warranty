@@ -14,13 +14,12 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
-    @item.room_items.build.build_room
+    @item.room_items.build
     @item.warranty_cards.build
   end
 
   # GET /items/1/edit
   def edit
-    @item.room_items.build
   end
 
   # POST /items or /items.json
@@ -70,7 +69,7 @@ class ItemsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def item_params
       params.require(:item).permit(:user_id, :name, :brand, :year, :serial, :photo,
-        room_items_attributes: [room_attributes: [:name, :user_id]],
+        room_items_attributes: [:room_id],
         warranty_cards_attributes: [:id, :code, :contact, :expiration, :lifetime, :notes])
     end
 end

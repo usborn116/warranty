@@ -39,13 +39,9 @@
 
   <h3>Room Name</h3>
   <%= f.fields_for :room_items do | sub_form |%>
-    <%= sub_form.fields_for :room do |room_form| %>
-      <%= room_form.label :name, "Select a Room" %><br>
-      <%= room_form.collection_check_boxes :id, Room.order(:name), :id, :name %> <br>
-      <%= room_form.label :name, "Or create your own" %><br>
-      <%= room_form.text_field :name %> 
-      <%= room_form.hidden_field :user_id, :value => current_user.id %>
-    <% end %>
+  <%= sub_form.label :room_id, "Select a Room" %><br>
+  <%= sub_form.collection_select :room_id, Room.order(:name), :id, :name %> <br>
+  <p>Don't see a room you want? <%= link_to  "Create a room", new_room_path %>
   <% end %>
 
   <h3>Warranty Info</h3>
@@ -71,10 +67,6 @@
       <%= warranty_form.text_field :notes %>
     </div>
   <% end %>
-
-  <div>
-    <%= f.hidden_field :user_id %>
-  </div>
 
   <div>
     <%= f.submit %>

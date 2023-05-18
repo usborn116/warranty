@@ -13,7 +13,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/new
   def new
-    @room = Room.new(user_id: current_user.id)
+    @room = Room.new
   end
 
   # GET /rooms/1/edit
@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
 
   # POST /rooms or /rooms.json
   def create
-    @room = Room.new(room_params)
+    @room = current_user.rooms.new(room_params)
 
     respond_to do |format|
       if @room.save
@@ -66,6 +66,6 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.fetch(:room, {})
+      params.require(:room).permit(:name)
     end
 end
