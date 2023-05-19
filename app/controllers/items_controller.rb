@@ -14,7 +14,6 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
-    @item.room_items.build
     @item.warranty_cards.build
   end
 

@@ -38,12 +38,12 @@
   </div>
 
   <h3>Room Name</h3>
-  <%= f.fields_for :room_items do | sub_form |%>
-    <%= sub_form.label :room_id, "Select a Room" %><br>
-    <%= sub_form.collection_select :room_id, Room.order(:name), :id, :name %> <br>
-    <%= sub_form.label :_destroy, "Remove item from this room"%>
-    <%= sub_form.check_box :_destroy%><br>
-  <% end %>
+  <div class="room-items">
+  <%= f.fields_for :room_items do | room_item |%>
+    <%= render 'room_item_fields', f: room_item %>
+  <% end %></div>
+  <%= link_to_add_association "Add Room", f, :room_items, data: {association_insertion_node: '.room-items', association_insertion_method: :append} %>
+  
 
   <p>Don't see a room you want? <%= link_to  "Create a room", new_room_path %>
 

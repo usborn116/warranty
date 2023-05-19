@@ -3,7 +3,9 @@ Item: <%= item.name %><br>
 Brand: <%= item.brand %><br>
 Year Purchased: <%= item.year.strftime('%Y') %><br>
 Serial Number: <%= item.serial %><br>
-Rooms: <%= item&.rooms.first&.name %><br>
+Rooms: <% item&.rooms.each do |item| %>
+    <%= item&.name %>
+    <%end%><br>
 <% if item.photo.attached? %><%= image_tag url_for(item.photo), :style=>"width:200px;height:auto" %><%end%>
 
 

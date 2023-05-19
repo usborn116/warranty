@@ -11,3 +11,5 @@ https://www.theodinproject.com/lessons/ruby-on-rails-advanced-forms
 https://www.createdbypete.com/2014/04/04/working-with-nested-forms-and-a-many-to-many-association-in-rails-4.html
 
 https://stackoverflow.com/questions/61915393/actionviewtemplateerror-cant-resolve-image-into-url-undefined-method
+
+https://rutikkpatel.medium.com/cocoon-gem-in-ruby-on-rails-7-784b00e06bc2
