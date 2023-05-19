@@ -39,10 +39,11 @@
 
   <h3>Room Name</h3>
   <%= f.fields_for :room_items do | sub_form |%>
-  <%= sub_form.label :room_id, "Select a Room" %><br>
-  <%= sub_form.collection_select :room_id, Room.order(:name), :id, :name %> <br>
-  <p>Don't see a room you want? <%= link_to  "Create a room", new_room_path %>
+    <%= sub_form.label :room_id, "Select a Room" %><br>
+    <%= sub_form.collection_select :room_id, Room.order(:name), :id, :name %> <br>
   <% end %>
+  
+  <p>Don't see a room you want? <%= link_to  "Create a room", new_room_path %>
 
   <h3>Warranty Info</h3>
   <%= f.fields_for :warranty_cards do | warranty_form |%>
