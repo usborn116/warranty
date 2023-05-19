@@ -38,14 +38,20 @@
   </div>
 
   <h3>Room Name</h3>
-  <div class="room-items">
+  <div class="room-items-exist">
   <%= f.fields_for :room_items do | room_item |%>
     <%= render 'room_item_fields', f: room_item %>
   <% end %></div>
-  <%= link_to_add_association "Add Room", f, :room_items, data: {association_insertion_node: '.room-items', association_insertion_method: :append} %>
   
+  <div class="room-items-new">
+  <%= f.fields_for :room_items do | room_item |%>
+    <%= render 'new_room_item_fields', f: room_item %>
+  <% end %></div>
 
-  <p>Don't see a room you want? <%= link_to  "Create a room", new_room_path %>
+  <%= link_to_add_association "Add Existing Room", f, :room_items, data: {association_insertion_node: '.room-items-exist', association_insertion_method: :append} %><br>
+  <%= link_to_add_association "Add a New Room", f, :room_items, partial: 'new_room_item_fields', data: {association_insertion_node: '.room-items-new',
+   association_insertion_method: :append}, wrap_object: Proc.new { |room_item| room_item.build_room; room_item } %>
+  
 
   <h3>Warranty Info</h3>
   <%= f.fields_for :warranty_cards do | warranty_form |%>

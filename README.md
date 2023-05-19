@@ -13,3 +13,7 @@ https://www.createdbypete.com/2014/04/04/working-with-nested-forms-and-a-many-to
 https://stackoverflow.com/questions/61915393/actionviewtemplateerror-cant-resolve-image-into-url-undefined-method
 
 https://rutikkpatel.medium.com/cocoon-gem-in-ruby-on-rails-7-784b00e06bc2
+
+https://dev.to/meaganewaller/use-a-nested-dynamic-form-with-a-hasmany-through-association-in-rails-33hf
+
+Cocoon gem docs: https://github.com/nathanvda/cocoon

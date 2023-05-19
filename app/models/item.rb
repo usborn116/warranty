@@ -9,4 +9,12 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :room_items, allow_destroy: true
 
   validates_presence_of :name, :brand, :year, :serial
+
+  before_save :find_or_create_rooms
+
+  def find_or_create_rooms
+    self.room_items.each do |room_item|
+      room_item.room = Room.find_or_create_by(name: room_item.room.name, user_id: room_item.room.user_id)
+    end
+  end
 end

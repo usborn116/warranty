@@ -1,0 +1,5 @@
+<div class="nested-fields">
+    <%= f.fields_for :room do |room| %>
+      <%= render "room_fields", f: room %>
+    <% end %>
+</div>
