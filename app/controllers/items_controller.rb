@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+    @item.room_items.build if @item.rooms.empty?
   end
 
   # POST /items or /items.json
@@ -69,7 +70,7 @@ class ItemsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def item_params
       params.require(:item).permit(:user_id, :name, :brand, :year, :serial, :photo,
-        room_items_attributes: [:id, :room_id],
+        room_items_attributes: [:id, :room_id, :_destroy],
         warranty_cards_attributes: [:id, :code, :contact, :expiration, :lifetime, :notes])
     end
 end
