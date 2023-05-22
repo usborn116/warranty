@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
 
   # GET /items or /items.json
   def index
-    @items = Item.all
+    @items = Item.includes(:rooms, :warranty_cards)
+    @items = Item.filter(params.slice(:name, :room, :expired, :active))
   end
 
   # GET /items/1 or /items/1.json
