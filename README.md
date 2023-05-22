@@ -17,3 +17,8 @@ https://rutikkpatel.medium.com/cocoon-gem-in-ruby-on-rails-7-784b00e06bc2
 https://dev.to/meaganewaller/use-a-nested-dynamic-form-with-a-hasmany-through-association-in-rails-33hf
 
 Cocoon gem docs: https://github.com/nathanvda/cocoon
+
+https://stimulus.hotwired.dev/reference/actions
+
+https://stackoverflow.com/questions/75792839/pass-an-element-index-from-an-erb-file-to-a-stimulus-controller
+

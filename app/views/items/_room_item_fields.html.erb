@@ -3,5 +3,6 @@
     <%= f.collection_select :room_id, Room.order(:name), :id, :name %> <br>
     <%= f.label :_destroy, "Remove item from this room"%>
     <%= f.check_box :_destroy%><br>
+    <button data-action="click->remover#remove:prevent">Remove</button>
 </div>
 

@@ -38,15 +38,18 @@
   </div>
 
   <h3>Room Name</h3>
-  <div class="room-items-exist">
+  <div class="room-items-exist" data-controller='remover'>
   <%= f.fields_for :room_items do | room_item |%>
     <%= render 'room_item_fields', f: room_item %>
-  <% end %></div>
+  <% end %>
   
-  <div class="room-items-new">
+  </div>
+  
+  <div class="room-items-new" data-controller='remover'>
   <%= f.fields_for :room_items do | room_item |%>
     <%= render 'new_room_item_fields', f: room_item %>
-  <% end %></div>
+  <% end %>
+  </div>
 
   <%= link_to_add_association "Add Existing Room", f, :room_items, data: {association_insertion_node: '.room-items-exist', association_insertion_method: :append} %><br>
   <%= link_to_add_association "Add a New Room", f, :room_items, partial: 'new_room_item_fields', data: {association_insertion_node: '.room-items-new',
