@@ -22,3 +22,6 @@ https://stimulus.hotwired.dev/reference/actions
 
 https://stackoverflow.com/questions/75792839/pass-an-element-index-from-an-erb-file-to-a-stimulus-controller
 
+https://www.justinweiss.com/articles/search-and-filter-rails-models-without-bloating-your-controller/
+
+https://guides.rubyonrails.org/active_record_querying.html#joining-tables
