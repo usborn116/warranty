@@ -25,3 +25,8 @@ https://stackoverflow.com/questions/75792839/pass-an-element-index-from-an-erb-f
 https://www.justinweiss.com/articles/search-and-filter-rails-models-without-bloating-your-controller/
 
 https://guides.rubyonrails.org/active_record_querying.html#joining-tables
+
+https://dev.to/mwong068/adding-a-basic-search-form-in-rails-5hnl
+
+https://guides.rubyonrails.org/form_helpers.html#the-collection-check-boxes-helper
+
