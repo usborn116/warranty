@@ -12,8 +12,8 @@ class Item < ApplicationRecord
   include Filterable
 
   scope :filter_by_name, ->(name) { joins(:rooms).where("LOWER(items.name) like ?", "#{name.downcase}%").distinct }
-  scope :filter_by_room, ->(room) { joins(:rooms).where('LOWER(rooms.name) = ?', "#{room}" ).distinct }
-  scope :filter_by_expired, ->(_expired) { joins(:warranty_cards).where('warranty_cards.expiration < ?', "#{Date.today}" .distinct) }
+  scope :filter_by_room, ->(room) { joins(:rooms).where('LOWER(rooms.name) = ?', "#{room.downcase}" ).distinct }
+  scope :filter_by_expired, ->(_expired) { joins(:warranty_cards).where('warranty_cards.expiration < ?', "#{Date.today}").distinct }
   scope :filter_by_active, ->(_active) { joins(:warranty_cards).where('warranty_cards.expiration >= ?', "#{Date.today}" ).or(joins(:warranty_cards).where('warranty_cards.lifetime >= ?', "true")).distinct }
 
   before_save :find_or_create_rooms

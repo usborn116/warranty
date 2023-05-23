@@ -3,9 +3,9 @@ module Filterable
 
     module ClassMethods
         def filter(filtering_params)
-            results = self.where(nil)
+            results = where(nil)
             filtering_params.each do |k, v|
-                results = results.public_send("filter_by_#{k}", v) if v.present?
+                results = results.public_send("filter_by_#{k}", v) unless(v == '0' || v.empty?) 
             end
             results
         end

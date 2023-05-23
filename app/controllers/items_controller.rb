@@ -4,8 +4,8 @@ class ItemsController < ApplicationController
 
   # GET /items or /items.json
   def index
-    @items = Item.includes(:rooms, :warranty_cards)
-    @items = Item.filter(params.slice(:name, :room, :expired, :active))
+    @items = Item.where(user_id: current_user.id)
+    @items = Item.filter(params.slice(:name, :room, :expired, :active)).where(user_id: current_user.id)
   end
 
   # GET /items/1 or /items/1.json
@@ -69,7 +69,7 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:user_id, :name, :brand, :year, :serial, :photo,
+      params.require(:item).permit(:user_id, :name, :expired, :active, :room, :brand, :year, :serial, :photo,
         room_items_attributes: [:id, :room_id, :_destroy, room_attributes: [:name, :user_id]],
         warranty_cards_attributes: [:id, :code, :contact, :expiration, :lifetime, :notes])
     end
