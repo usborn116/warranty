@@ -1,11 +1,23 @@
+<div class="search">
 <%= form_with url: "/items", :method => "get" do |f| %>
-<%= f.label :name, "Name"%>
-<%= f.text_field :name %>
-<%= f.label :expired, "Expired"%>
-<%= f.check_box  :expired %>
-<%= f.label :active, "Active"%>
-<%= f.check_box :active %>
-<%= f.label :room, "Room" %>
-<%= f.collection_select :room, Room.order(:name), :name, :name, :include_blank => true %>
-<%= f.submit "Search", :name => nil%>
+<div class="field">
+    <%= f.label :name, "Name"%>
+    <%= f.text_field :name %>
+</div>
+<div class="field">
+    <%= f.label :expired, "Expired"%>
+    <%= f.check_box  :expired %>
+</div>
+<div class="field">
+    <%= f.label :active, "Active"%>
+    <%= f.check_box :active %>
+</div>
+<div class="field">
+    <%= f.label :room, "Room" %>
+    <%= f.collection_select :room, Room.order(:name), :name, :name, :include_blank => true %>
+</div>
+<div class="field">
+    <%= f.submit "Search", :name => nil%>
+</div>
 <%end%>
+</div>

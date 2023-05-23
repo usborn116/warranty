@@ -7,8 +7,8 @@ Rooms: <% item&.rooms.each do |item| %>
     <%= item&.name %>
     <%end%><br>
 <% if item.photo.attached? %><%= image_tag url_for(item.photo), :style=>"width:200px;height:auto" %><%end%>
-<% if !item.warranty_cards.first.expiration && !item.warranty_cards.first.lifetime %><p>THIS ITEM HAS BLANK WARRANTY EXPIRATION DATA</p><%end%>
-
+<% if !item.warranty_cards.first.expiration && !item.warranty_cards.first.lifetime %><p>THIS ITEM HAS BLANK WARRANTY EXPIRATION DATA</p><%end%><br>
+<%= link_to "Show this item", item %>
 
 <summary>
 Warranty details
