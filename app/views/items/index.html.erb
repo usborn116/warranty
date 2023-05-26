@@ -1,7 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Items</h1>
+<div class='topbar'>
 <%= render 'search' %>
+<%= link_to "New item", new_item_path %>
+</div>
 
 <div id="items">
   <% @items.each do |item| %>
@@ -12,4 +15,4 @@
   <% end %>
 </div>
 
-<%= link_to "New item", new_item_path %>
+

@@ -1,8 +1,18 @@
+/* colors:
+#F5F1ED: isabelline
+#596869: dim gray
+#36453B: dark slate gray
+#515751: ebony
+#FA7E61: bittersweet
+*/
+
 html{
     font-family: 'Lato', sans-serif;
+    color: #515751;
  }
 
  body{
+    min-height: 100%;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -26,10 +36,146 @@ html{
     align-items: center;
  }
 
- .field{
-    display:flex;
+ .form{
+    display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2vw;
+    padding: 10px;
+    margin: 8px;
+    width: 100%;
+    max-width: 50vw;
+    background: #F5F1ED;
+    border-radius: 4px;
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+ }
+
+ .room-items-exist{
+    display: flex;
+    flex-direction: column;
+ }
+
+ .form form{
+    display: flex;
+    flex-direction: column;
+ }
+
+ h3{
+    font-size: 22px;
+ }
+
+ .field, .nested-fields{
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+ }
+
+ .field label, .nested-fields label, .check label{
+    margin-top: 7px;
+ }
+
+ .field input, .nested-fields input{
+    font-size: 16px;
+    line-height: 25px;
+    padding: 8px;
+    width: 95%;
+    min-height: 20px;
+    border-radius: 8px;
+    border-style: solid;
+    outline-color: rgb(84 105 212 / 0.5);
+    background-color: rgb(255, 255, 255);
+ }
+
+ .submit{
+    justify-self: center;
+    align-self: center;
+    margin-top: 10px;
+ }
+ 
+ input[type=submit], .form a, button, input[type=file], a{
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    border-style: solid;
+    outline-color: rgb(84 105 212 / 0.5);
+    color: #f5f1ed;
+    background-color: #36453B;
+    text-decoration: none;
+ }
+
+ input[type=submit]:hover, .form a:hover, button:hover, a:hover{
+    color: #515751;
+    background-color: #F5F1ED;
+ }
+
+ .form a, input[type=file]{
+    font-size: 16px;
+    text-decoration: none;
+    width: 80%;
+ }
+
+ .loginlinks a{
+    font-size: 14px;
+ }
+
+ button{
+    background-color: #596869;
+    font-size: 14px;
+    text-align: left;
+    width: 50%;
+ }
+
+ .check{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+ }
+
+ .check input[type=checkbox]{
+    width: 10%;
+ }
+
+ select{
+    font-size: 16px;
+    line-height: 25px;
+    padding: 8px;
+    width: 95%;
+    min-height: 20px;
+    border-radius: 8px;
+    border-style: solid;
+    outline-color: rgb(84 105 212 / 0.5);
+    background-color: rgb(255, 255, 255);
+ }
+
+ .remove{
+    display: flex;
     justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 16px;
+    text-align: center;
+    width: 16px;
+    height: 16px;
+    background-color: #FA7E61;
+    border-width: 0px;
+ }
+
+ .loginlinks{
+    width: 100%;
+    display: flex;
+    margin: 10px;
+    gap: 7px;
+    justify-content: center;
+ }
+
+ .loginlinks a{
+    width: 35%;
+    text-align: center;
+    background-color: #596869;
+ }
+
+ .topbar{
+    display: flex;
+    justify-content: space-between;
  }

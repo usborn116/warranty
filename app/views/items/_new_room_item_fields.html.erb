@@ -2,5 +2,5 @@
     <%= f.fields_for :room do |room| %>
       <%= render "room_fields", f: room %>
     <% end %>
-    <button data-action="click->remover#remove:prevent">Remove</button>
+    <button class='remove' data-action="click->remover#remove:prevent">X</button>
 </div>

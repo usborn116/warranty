@@ -30,3 +30,4 @@ https://dev.to/mwong068/adding-a-basic-search-form-in-rails-5hnl
 
 https://guides.rubyonrails.org/form_helpers.html#the-collection-check-boxes-helper
 
+https://github.com/heartcombo/devise/issues/5458

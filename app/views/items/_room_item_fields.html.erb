@@ -1,8 +1,10 @@
 <div class="nested-fields">
-    <%= f.label :room_id, "Select a Room" %><br>
-    <%= f.collection_select :room_id, Room.order(:name), :id, :name %> <br>
+    <%= f.label :room_id, "Select a Room" %>
+    <%= f.collection_select :room_id, Room.order(:name), :id, :name %>
+    <div class='check'>
     <%= f.label :_destroy, "Remove item from this room"%>
     <%= f.check_box :_destroy%><br>
-    <button data-action="click->remover#remove:prevent">Remove</button>
+    </div>
+    <button class='remove' data-action="click->remover#remove:prevent">x</button>
 </div>
 

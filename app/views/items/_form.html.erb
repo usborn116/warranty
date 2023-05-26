@@ -13,31 +13,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Name of Item" %>
     <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :brand %><br />
+    <%= f.label :brand %>
     <%= f.text_field :brand, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :year %><br />
+    <%= f.label :year, "Date Purchased" %>
     <%= f.date_field :year, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :serial %><br />
+    <%= f.label :serial, "Serial Number" %>
     <%= f.text_field :serial, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :photo %><br />
+    <%= f.label :photo %>
     <%= f.file_field :photo, direct_upload: true %>
   </div>
 
-  <h3>Room Name</h3>
+  <h3>Rooms</h3>
   <div class="room-items-exist" data-controller='remover'>
   <%= f.fields_for :room_items do | room_item |%>
     <%= render 'room_item_fields', f: room_item %>
@@ -56,7 +56,7 @@
    association_insertion_method: :append}, wrap_object: Proc.new { |room_item| room_item.build_room; room_item } %>
   
 
-  <h3>Warranty Info</h3>
+  <h3 class='warrantyform'>Warranty Info</h3>
   <%= f.fields_for :warranty_cards do | warranty_form |%>
     <div class='field'>
       <%= warranty_form.label :code %>
@@ -70,7 +70,7 @@
       <%= warranty_form.label :expiration %>
       <%= warranty_form.date_field :expiration %>
     </div>
-    <div class='field'>
+    <div class='check'>
       <%= warranty_form.label :lifetime, "Lifetime Warranty?"%>
       <%= warranty_form.check_box :lifetime %>
     </div>
@@ -80,7 +80,7 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="submit">
     <%= f.submit %>
   </div>
 <% end %>
