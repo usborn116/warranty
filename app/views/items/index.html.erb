@@ -1,17 +1,17 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Items</h1>
 <div class='topbar'>
 <%= render 'search' %>
-<%= link_to "New item", new_item_path %>
+<%= link_to "+ New item", new_item_path %>
 </div>
 
 <div id="items">
+  <div class='itemlisting'>
+    <h3>Photo</h3>
+    <h3>Item Details</h3>
+    <h3>Warranty Details</h3>
+  </div>
   <% @items.each do |item| %>
     <%= render item %>
-    <p>
-      
-    </p>
   <% end %>
 </div>
 

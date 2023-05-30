@@ -1,21 +1,24 @@
-<div id="<%= dom_id item %>">
-Item: <%= item.name %><br>
-Brand: <%= item.brand %><br>
-Year Purchased: <%= item.year.strftime('%Y') %><br>
-Serial Number: <%= item.serial %><br>
-Rooms: <% item&.rooms.each do |item| %>
-    <%= item&.name %>
-    <%end%><br>
-<% if item.photo.attached? %><%= image_tag url_for(item.photo), :style=>"width:200px;height:auto" %><%end%>
-<% if !item.warranty_cards.first.expiration && !item.warranty_cards.first.lifetime %><p>THIS ITEM HAS BLANK WARRANTY EXPIRATION DATA</p><%end%><br>
+<div class='itemlisting' id="<%= dom_id item %>">
+<div class='photo'>
+    <% if item.photo.attached? %><%= image_tag url_for(item.photo), :style=>"width:200px;height:auto" %><%end%>
+</div>
+
+<div class='details'>
+    <div>Item: <%= item.name %></div>
+    <div>Brand: <%= item.brand %></div>
+    <div>Year Purchased: <%= item.year.strftime('%Y') %></div>
+    <div>Serial Number: <%= item.serial %></div>
+    <div>Rooms: <% item&.rooms.each do |item| %>
+        <%= item&.name %>
+        <%end%></div>
 <%= link_to "Show this item", item %>
+</div>
 
-<summary>
-Warranty details
-<details>
-<%= render item.warranty_cards %>
 
-</details>
-</summary>
+
+<div class='warrantyinfo'>
+    <% if !item.warranty_cards.first.expiration && !item.warranty_cards.first.lifetime %><p>THIS ITEM HAS BLANK WARRANTY EXPIRATION DATA</p><%end%><br>
+    <%= render item.warranty_cards %>
+</div>
 
 </div>

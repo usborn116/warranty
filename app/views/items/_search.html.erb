@@ -2,7 +2,7 @@
 <%= form_with url: "/items", :method => "get" do |f| %>
 <div class="field">
     <%= f.label :name, "Name"%>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :placeholder => 'Search' %>
 </div>
 <div class="field">
     <%= f.label :expired, "Expired"%>
@@ -16,7 +16,7 @@
     <%= f.label :room, "Room" %>
     <%= f.collection_select :room, Room.order(:name), :name, :name, :include_blank => true %>
 </div>
-<div class="field">
+<div class="submit field">
     <%= f.submit "Search", :name => nil%>
 </div>
 <%end%>
