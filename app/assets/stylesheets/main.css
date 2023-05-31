@@ -69,15 +69,55 @@ align-items: center
 
 .itemlisting{
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1.5fr;
+    width: 75vw;
+    grid-template-columns: 1.25fr 1fr 1.25fr;
     column-gap: 2vw;
-    row-gap: 3vh;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+    border-bottom: 1px solid #36453B;
 }
 
 .itemlisting .details{
     display: flex;
     flex-direction: column;
+    align-items: left;
+    gap: 5px;
+    font-size: 18px;
 }
+
+.warrantyinfo p{
+    font-size: 20px;
+}
+
+.itemlisting a{
+    height: 25px;
+    font-size: 18px;
+    margin-left: 0;
+    padding: 7px;
+    background-color: #36453B;
+    color: #F5F1ED;
+    border: 0px;
+    margin-top: 10px;
+    width: fit-content;
+}
+
+.list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.2vw;
+}
+
+.list a{
+    font-size: auto;
+    height: fit-content;
+}
+
+#roombar{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0;
+}
+
 
 .topbar{
     display: flex;

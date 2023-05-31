@@ -1,16 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
+
 <h1>Rooms</h1>
-<div class='topbar'>
+<div class='topbar' id='roombar'>
 <%= link_to "+ New Room", new_room_path%>
 </div>
 
 <div id="rooms">
+<div class='itemlisting'>
+    <h3>Room</h3>
+    <h3># Items</h3>
+    <h3>List</h3>
+  </div>
   <% @rooms.each do |room| %>
     <%= render room %>
-    <p>
-      <%= link_to "Show this room", room %>
-    </p>
   <% end %>
 </div>
 
