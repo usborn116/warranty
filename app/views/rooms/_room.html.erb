@@ -1,7 +1,11 @@
 <div class = 'itemlisting' id="<%= dom_id room %>">
 
-<div class='roomlink'><%= link_to "#{room.name}", room%></div>
-<div><%= room.items.count%></div>
+<div class='listinglinks' id='roomlink'>
+<h3><%= room.name %></h3>
+<%= link_to "Edit Room Name", edit_room_path(room) %>
+<span class='delete'><%= button_to "Delete Room", room, method: :delete %></span>
+</div>
+<div><%= room.items.count%> items</div>
 <div class = 'list'>
 <% room.items.each do |i| %>
 <%= link_to "#{i.name}", i %>

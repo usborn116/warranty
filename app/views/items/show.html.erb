@@ -1,8 +1,11 @@
+<div class='indiv'>
+
 <%= render @item %>
 
-<div>
-  <%= link_to "Edit this item", edit_item_path(@item) %> |
-  <%= link_to "Back to items", items_path %>
+<div class='listinglinks'>
+  <%= link_to "← Back", items_path %>
+  <%= link_to "Edit Item", edit_item_path(@item) %>
+  <%= button_to "Delete Item", @item, method: :delete %>
+</div>
 
-  <%= button_to "Destroy this item", @item, method: :delete %>
 </div>

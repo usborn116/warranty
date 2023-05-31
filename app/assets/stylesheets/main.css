@@ -102,10 +102,17 @@ align-items: center
     width: fit-content;
 }
 
+#editroom{
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    align-items: center;
+}
+
 .list{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.2vw;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1vh;
 }
 
 .list a{
@@ -120,10 +127,20 @@ align-items: center
     margin-bottom: 0;
 }
 
-.roomlink a{
+#roomlink{
+    display: flex;
+    flex-direction: column;
+}
+
+#roomlink h3{
     background-color: transparent;
     color: #36453B;
     font-size: 20px;
+    margin-top: 0;
+}
+
+#roomlink .delete button{
+    color: #FA7E61;
 }
 
 
@@ -194,6 +211,36 @@ align-items: center
 #roomsearch .submit{
     width: 30%;
     margin-top: 0px;
+}
+
+.indiv{
+    display: flex;
+    width: 80vw;
+}
+
+.indiv .itemlisting{
+    border-bottom: 0px;
+    border-right: 1px solid #36453B;
+    padding-right: 3vw;
+}
+
+.listinglinks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.listinglinks a, .listinglinks button{
+    width: 20vw;
+    height: auto;
+    margin: 0px;
+    font-size: 18px;
+    background-color: transparent;
+    border: 0px;
+    color:#515751;
+    text-align: center;
+    align-items: center;
 }
 
 .form{
