@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
   # GET /rooms or /rooms.json
   def index
     @rooms = Room.joins(:items).group(:id).order('COUNT(items.id) DESC')
+    @rooms = Room.filter(params.slice(:name)).where(user_id: current_user.id)
   end
 
   # GET /rooms/1 or /rooms/1.json

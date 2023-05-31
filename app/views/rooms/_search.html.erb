@@ -1,0 +1,10 @@
+<div class="search" id='roomsearch'>
+<%= form_with url: "/rooms", :method => "get" do |f| %>
+<div class="field">
+    <%= f.text_field :name, :placeholder => 'Search by name' %>
+</div>
+<div class="submit field">
+    <%= f.submit "Search", :name => nil%>
+</div>
+<%end%>
+</div>

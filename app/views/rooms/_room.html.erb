@@ -1,6 +1,6 @@
 <div class = 'itemlisting' id="<%= dom_id room %>">
 
-<div><%= room.name%></div>
+<div class='roomlink'><%= link_to "#{room.name}", room%></div>
 <div><%= room.items.count%></div>
 <div class = 'list'>
 <% room.items.each do |i| %>
