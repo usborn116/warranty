@@ -2,7 +2,23 @@
 
 This application allows you to track you warranties! You will be able to filter by expiration, room where the item is used, filter for items with lifetime warranties, etc.
 
-Helpful links:
+In the Items page, you can search for an item based on name, expiration status, and room that it's in. You can also add new items here:
+<img width="1436" alt="CleanShot 2023-06-01 at 12 12 14@2x" src="https://github.com/usborn116/warranty/assets/64931297/58c84220-2d85-4d39-a342-dc5a9bb95921">
+
+The items page will show 3 columns: item details, a photo, and warranty details:
+<img width="1135" alt="CleanShot 2023-06-01 at 12 12 25@2x" src="https://github.com/usborn116/warranty/assets/64931297/745f9ce9-8e99-495d-a161-f4ac9cd74887">
+
+There are several fields to fill out when creating a new item:
+![CleanShot 2023-06-01 at 12 12 41](https://github.com/usborn116/warranty/assets/64931297/33adcfc5-044e-45ed-8799-27f4608b1900)
+
+You can also edit existing items:
+![CleanShot 2023-06-01 at 12 13 06](https://github.com/usborn116/warranty/assets/64931297/0438c216-7553-4957-81ba-a6eee5d77ec0)
+
+Finally, the Rooms page will show you a list of rooms, the number of items in each room, and a list of items in that room. You can click on an item name to view it, and you can change the room name or delete it as well:
+<img width="1428" alt="CleanShot 2023-06-01 at 12 13 25@2x" src="https://github.com/usborn116/warranty/assets/64931297/a8d46e7c-c7ca-4f55-bdef-7f452515be3a">
+
+
+These were some helpful resources I used in creating this app:
 
 https://medium.com/inview-technical-blog/rails-5-using-find-or-create-by-for-nested-attributes-ff633aee62a1
 
